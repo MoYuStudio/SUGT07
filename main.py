@@ -11,6 +11,9 @@ class MyGame(ShowBase):
     def __init__(self):
         super().__init__(self)
 
+        # only disables the default camera control
+        self.disableMouse()
+
         box = self.loader.loadModel('models/box')
         box.setPos(0,10,0)
         box.reparentTo(self.render)
