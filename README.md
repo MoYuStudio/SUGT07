@@ -40,5 +40,5 @@ MoYu Engine 文件检索
         上传 SUGT06a12 至 GitHub
 
 ##### 08/09/2021 更新日志
-        更换API 由Pygame 更换为 Pyglet
+        更换API 由 Pygame 更换为 Pyglet
         SUGT06 升级 SUGT07
