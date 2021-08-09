@@ -5,6 +5,7 @@ import random
 
 import pyglet
 from pyglet.gl import *
+from pyglet.window import Window
 from pyglet.window import key
 
 import components.tilemap_manager
