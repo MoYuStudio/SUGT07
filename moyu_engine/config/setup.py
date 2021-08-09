@@ -5,6 +5,8 @@ import random
 
 import pyglet
 
+import components.tilemap_manager
+
 boarder = 16
 tile_level = 1
 tile_size = 64*tile_level
@@ -25,19 +27,12 @@ window = pyglet.window.Window()
 window.set_caption('TinyLand 弹丸之地')
 #window.set_size(1280, 720)
 
-tl1 = pyglet.image.load('moyu_engine/assets/graphics/tileland/tl1.png')
-tl6 = pyglet.image.load('moyu_engine/assets/graphics/tileland/tl6.png')
-tl11 = pyglet.image.load('moyu_engine/assets/graphics/tileland/tl11.png')
-tl16 = pyglet.image.load('moyu_engine/assets/graphics/tileland/tl16.png')
-tl21 = pyglet.image.load('moyu_engine/assets/graphics/tileland/tl21.png')
+
 
 @window.event
 def on_draw():
     window.clear()
-    tl1.blit(0, 50)
-    tl6.blit(50, 50)
-    tl11.blit(100, 50)
-    tl16.blit(150, 50)
-    tl21.blit(200, 50)
+    components.tilemap_manager.tilemap_loarder()
 
+components.tilemap_manager.tilemap_builder()
 pyglet.app.run()
