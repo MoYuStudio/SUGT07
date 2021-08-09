@@ -1,28 +1,16 @@
-import panda3d
-from panda3d.core import loadPrcFile
-loadPrcFile('config/config.prc')
+import pyglet
 
-from panda3d.core import loadPrcFileData
+window = pyglet.window.Window()
+label = pyglet.text.Label('Hello, world',
+                          font_name='Times New Roman',
+                          font_size=36,
+                          x=window.width//2, y=window.height//2,
+                          anchor_x='center', anchor_y='center')
+#image = pyglet.resource.image('kitten.jpg')
 
-from direct.showbase.ShowBase import ShowBase
+@window.event
+def on_draw():
+    window.clear()
+    label.draw()
 
-class MyGame(ShowBase):
-
-    def __init__(self):
-        super().__init__(self)
-
-        # only disables the default camera control
-        self.disableMouse()
-
-        box = self.loader.loadModel('models/box')
-        box.setPos(0,10,0)
-        box.reparentTo(self.render)
-
-        panda = self.loader.loadModel('models/panda')
-        panda.setPos(-3,10,0)
-        panda.setScale(0.1,0.1,0.1)
-        panda.reparentTo(self.render)
-
-game = MyGame()
-
-game.run()
+pyglet.app.run()
