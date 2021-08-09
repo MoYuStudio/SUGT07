@@ -1,7 +1,7 @@
 boarder = 16
 tile_level = 1
 tile_size = 64*tile_level
-move_x,move_y = 19*30,3*30
+move_x,move_y = 7*30,12*30
 move_speed = 5
 
 tile_choose_info = [0,0,0,0,0,0]

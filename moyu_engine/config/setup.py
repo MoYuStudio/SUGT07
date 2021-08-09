@@ -5,15 +5,17 @@ import random
 
 import pyglet
 from pyglet.gl import *
+from pyglet.gl import glTranslatef
 from pyglet.window import Window
 from pyglet.window import key
+
 
 import components.tilemap_manager
 
 boarder = 16
 tile_level = 1
 tile_size = 64*tile_level
-move_x,move_y = 19*30,3*30
+move_x,move_y = -150*30,-125*30
 move_speed = 5
 
 tile_choose_info = [0,0,0,0,0,0]
@@ -42,8 +44,27 @@ def on_draw():
 
 @window.event
 def on_key_press(symbol, modifiers):
+    if symbol == key.W:
+        glTranslatef(0,10,0)
+        print('W')
+
+    if symbol == key.S:
+        glTranslatef(0,-10,0)
+        print('S')
+
     if symbol == key.A:
-        print('The "A" key was pressed.')
+        glTranslatef(-10,0,0)
+        print('A')
+
+    if symbol == key.D:
+        glTranslatef(10,0,0)
+        print('D')
+
+    if symbol == key.Q:
+        glTranslatef(0,0,1)
+        print('Q')
+
+
     elif symbol == key.LEFT:
         print('The left arrow key was pressed.')
     elif symbol == key.ENTER:
