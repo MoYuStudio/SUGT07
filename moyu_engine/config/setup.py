@@ -4,6 +4,8 @@ import sys
 import random
 
 import pyglet
+from pyglet.gl import *
+from pyglet.window import key
 
 import components.tilemap_manager
 
@@ -32,7 +34,19 @@ window.set_caption('TinyLand 弹丸之地')
 @window.event
 def on_draw():
     window.clear()
+    glEnable(GL_BLEND)
+
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
     components.tilemap_manager.tilemap_loarder()
+
+@window.event
+def on_key_press(symbol, modifiers):
+    if symbol == key.A:
+        print('The "A" key was pressed.')
+    elif symbol == key.LEFT:
+        print('The left arrow key was pressed.')
+    elif symbol == key.ENTER:
+        print('The enter key was pressed.')
 
 components.tilemap_manager.tilemap_builder()
 pyglet.app.run()
